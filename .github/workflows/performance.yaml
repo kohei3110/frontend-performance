@@ -1,0 +1,13 @@
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "Page Speed Insights"
+    steps:
+      - name: Running Page Speed Insights
+        uses: jakepartusch/psi-action@v1.2
+        id: psi
+        with:
+          url: "https://www.microsoft.com/ja-jp"
+          threshold: 70
+          strategy: mobile
